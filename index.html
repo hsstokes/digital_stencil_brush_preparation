@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stencil Techniques: Creating Digital Brushes</title>
+<style>
+:root {
+  --primary: #ea37a3;
+  --primary-light: #fdf1f5;
+  --secondary: #0a8080;
+  --secondary-light: #f5ffff;
+  --dark: #222;
+  --light: #fff;
+  --grid-light: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Typewriter Condensed", "Courier New", monospace;
+  background-image:
+    linear-gradient(var(--grid-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-light) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px;
+  background-attachment: fixed;
+  color: var(--dark);
+  padding: 20px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1000px;
+  width: 95%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.97);
+  border: 3px solid var(--primary);
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
+h1, h2, h3 {
+  font-family: "Typewriter Condensed", "Courier New", monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8em;
+}
+
+h1 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: 15px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+h2 {
+  color: var(--secondary);
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 25px;
+  background: var(--primary);
+  margin-right: 15px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+p {
+  line-height: 1.8;
+  margin-bottom: 1.2em;
+  font-size: 1.1rem;
+}
+
+.header-box {
+  background: var(--primary-light);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 2px dashed var(--primary);
+}
+
+.checklist {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.checklist ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.checklist li {
+  margin-bottom: 10px;
+  padding-left: 35px;
+  position: relative;
+}
+
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--secondary);
+  border-radius: 5px;
+}
+
+.example-box {
+  background: var(--secondary-light);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border-left: 5px solid var(--secondary);
+}
+
+.example-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--secondary);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.important-note {
+  background: var(--primary-light);
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border-left: 5px solid var(--primary);
+}
+
+.important-note strong {
+  color: var(--primary);
+}
+
+.task-section {
+  margin: 30px 0;
+  padding-top: 15px;
+  border-top: 2px dashed var(--secondary);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Creating Stencils & Digital Brushes</h1>
+  
+  <div class="header-box">
+    <h2 style="margin-top: 0;">Digital Stencil Workshop - Materials List</h2>
+    <p>This guide explains what to bring to class and prepare for our digital stencil workshop. Please read it carefully before attending.</p>
+  </div>
+
+  <!-- Example section -->
+  <div class="example-box">
+    <h3 style="color: var(--secondary); margin-top: 0;">Example: Stencil Cut with Oil Pastel</h3>
+    <img class="example-image" src="stencil_example.jpg" alt="Example of stencil and digital brush application">
+    <p>This example shows a completed stencil cut applied to an oil pastel texture that has been converted into a digital brush.</p>
+  </div>
+  
+  <h2>What You Need to Bring</h2>
+  
+  <div class="checklist">
+    <ul>
+      <li>Scanned oil pastel sheet (high resolution 300dpi)</li>
+      <li>2-3 scanned A3 sheets from class</li>
+      <li>2-3 images for cutting shapes</li>
+      <li>Computer with Photoshop installed</li>
+      <li>USB drive or cloud storage access</li>
+    </ul>
+  </div>
+  
+  <div class="important-note">
+    <strong>Important:</strong> All scanned images must be in JPG format at high resolution (300dpi minimum). Low quality images will not work well for making digital brushes.
+  </div>
+  
+  <h2>Workshop Tasks Overview</h2>
+  
+  <p>During the workshop, you will complete the following tasks:</p>
+  
+  <div class="task-section">
+    <h3>Task 1: Stencil Application</h3>
+    <ul>
+      <li>Turn image into stencil using threshold</li>
+      <li>Cut stencil shape into oil pastel texture</li>
+    </ul>
+  </div>
+  
+  <div class="task-section">
+    <h3>Task 2: Digital Brushes</h3>
+    <ul>
+      <li>Turn stencil into custom brush</li>
+      <li>Create artwork using your brush</li>
+    </ul>
+  </div>
+  
+  <div class="task-section">
+    <h3>Task 3: Documentation</h3>
+    <ul>
+      <li>Take screenshots of your process</li>
+      <li>Upload your work to Padlet</li>
+    </ul>
+  </div>
+
+  <div class="important-note">
+    <strong>Note:</strong> Please complete your preparation before class to maximize workshop time.
+  </div>
+  
+</div>
+
+</body>
+</html>
